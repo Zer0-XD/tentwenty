@@ -1,0 +1,23 @@
+{
+  "name": "tentwenty-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "parcel src/index.html --open",
+    "clean": "rm -rf dist/*",
+    "build:parcel": "parcel build src/index.html --public-url ./",
+    "build": "npm run clean && npm run build:parcel"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.6.0",
+    "parcel": "^2.6.0"
+  },
+  "dependencies": {
+    "gsap": "^3.10.4",
+    "locomotive-scroll": "^4.1.4",
+    "pace-js": "^1.2.4"
+  }
+}
