@@ -10,34 +10,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-const scroller = document.querySelector('[data-scroll-container]');
-
-
-// const locoScroll = new LocomotiveScroll({
-//     el: document.querySelector(scroller),
-//     smooth: true
-// });
-// locoScroll.on("scroll", ScrollTrigger.update);
-
-// ScrollTrigger.scrollerProxy(".wrapper", {
-//     scrollTop(value) {
-//         return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-//     },
-//     getBoundingClientRect() {
-//         return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
-//     },
-//     pinType: document.querySelector(scroller).style.transform ? "transform" : "fixed"
-// });
-
-// ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-
-// ScrollTrigger.refresh();
-
-
-// ScrollTrigger.defaults({
-//     scroller: scroller,
-// })
-
 
 // ------------------
 
@@ -69,11 +41,8 @@ function WidthChange(mq) {
                 ease: "none",
                 scrollTrigger: {
                     trigger: container,
-                    // scroller: scroller,
-                    // markers: true,
-                    // start: "left top",
                     pin: true,
-                    // preventOverlaps: "auto",
+                    preventOverlaps: "auto",
                     scrub: 1,
                     snap: {
                         snapTo: "div",
@@ -165,7 +134,7 @@ gsap.to(".big-text-two", {
     ease: "Sine.easeInOut",
     scrollTrigger: {
         trigger: ".second-section",
-        start: window.innerWidth < 767 ? "top center" : "center -40%",
+        start: window.innerWidth < 767 ? "top center" : "top  12%",
         end: "center",
         scrub: 0.5,
     }
@@ -364,4 +333,4 @@ ScrollTrigger.create({
 });
 
 // make the right edge "stick" to the scroll bar. force3D: true improves performance
-gsap.set("img-1", { transformOrigin: "center", force3D: true });
+gsap.set(".skewed", { transformOrigin: "center", force3D: true });
